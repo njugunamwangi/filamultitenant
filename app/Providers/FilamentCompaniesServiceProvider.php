@@ -46,7 +46,7 @@ class FilamentCompaniesServiceProvider extends PanelProvider
             ->default()
             ->login(Login::class)
             ->passwordReset()
-            ->homeUrl(static fn (): string => url(Pages\Dashboard::getUrl(panel: 'company', tenant: Auth::user()?->personalCompany())))
+            // ->homeUrl(static fn (): string => url(Pages\Dashboard::getUrl(panel: 'company', tenant: Auth::user()?->personalCompany())))
             ->plugin(
                 FilamentCompanies::make()
                     ->userPanel('admin')
