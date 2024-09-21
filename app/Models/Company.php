@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Company\Note;
 use Filament\Models\Contracts\HasAvatar;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Wallo\FilamentCompanies\Company as FilamentCompaniesCompany;
 use Wallo\FilamentCompanies\Events\CompanyCreated;
 use Wallo\FilamentCompanies\Events\CompanyDeleted;
@@ -49,5 +51,10 @@ class Company extends FilamentCompaniesCompany implements HasAvatar
     public function getFilamentAvatarUrl(): string
     {
         return $this->owner->profile_photo_url;
+    }
+
+    public function notes(): HasMany
+    {
+        return $this->hasMany(Note::class);
     }
 }
