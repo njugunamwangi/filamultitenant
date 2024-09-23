@@ -1,6 +1,6 @@
 ## About Project
 
-A simple hospital management system built with Laravel & FilamentPHP
+A boilerplate for Filament Multi-tenant application
 
 ## Tech Stack
 
