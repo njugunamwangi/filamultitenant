@@ -53,6 +53,7 @@ class AdminPanelProvider extends PanelProvider
                     ->icon('heroicon-o-user-circle')
                     ->url(static fn () => url(Profile::getUrl())),
                 MenuItem::make()
+                    ->visible(fn() => Auth::user()->ownedCompanies->count() > 0)
                     ->label('Company')
                     ->icon('heroicon-o-building-office')
                     ->url(static fn () => url(Pages\Dashboard::getUrl(panel: 'company', tenant: Auth::user()->personalCompany()))),
